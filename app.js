@@ -16,11 +16,12 @@ var commentRoutes    = require("./routes/comments"),
     campgroundRoutes = require("./routes/campgrounds"),
     authRoutes       = require("./routes/index");
     
+var Database = process.env.DBURL || "mongodb://localhost/yelp_camp";
+
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended:true}));
-//mongoose.connect("mongodb://localhost/yelp_camp");
-//mongoose.connect("mongodb://senp:intensedb@ds011389.mlab.com:11389/intensecoast");
-mongoose.connect(process.env.DBURL);
+
+mongoose.connect(Database);
 
 app.use(express.static(__dirname + "/public"));
 app.use(MethodOverride("_method"));
