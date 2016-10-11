@@ -33,7 +33,7 @@ router.post("/register", function(req,res){
                                                     if(err) { req.flash("error", err.message); 
                                                               return res.redirect("/register"); }
                                                     
-                                                    req.flash("success", "Welcome to YelpCamp " + user.username + " !");
+                                                    req.flash("success", "Welcome to CampShare " + user.username + " !");
                                                     res.redirect("/campgrounds");
                                                 });
                 });
@@ -56,7 +56,7 @@ router.post('/login', function(req, res, next) {
                                                                                                     }
                                                                                         req.logIn(user, function(err) {
                                                                                                         if (err) { return next(err); }
-                                                                                                        req.flash("success", "Welcome to YelpCamp " + user.username + " !");
+                                                                                                        req.flash("success", "Welcome to CampShare " + user.username + " !");
                                                                                                         return res.redirect("/campgrounds");
                                                                                         });
                                           })(req, res, next);

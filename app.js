@@ -53,5 +53,5 @@ app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
 app.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function(){
-   console.log("YelpCamp server started listening"); // at", addr.address + ":" + addr.port);
+   console.log("CampShare server started listening"); // at", addr.address + ":" + addr.port);
 });
